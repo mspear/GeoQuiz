@@ -2,6 +2,7 @@ package com.bignerdranch.android.geoquiz;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.bluetooth.BluetoothClass;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -22,6 +23,7 @@ public class CheatActivity extends AppCompatActivity {
     private boolean mAnswerIsTrue;
 
     private TextView mAnswerTextView;
+    private TextView mAndroidVersion;
     private Button mShowAnswer;
 
     private boolean mAnswerIsShown;
@@ -93,6 +95,9 @@ public class CheatActivity extends AppCompatActivity {
                 }
             }
         });
+        mAndroidVersion = (TextView) findViewById(R.id.android_version);
+        mAndroidVersion.setText("API level " + Integer.toString(Build.VERSION.SDK_INT)); // Idenify build int here
+
     }
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
